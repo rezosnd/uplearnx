@@ -522,35 +522,56 @@ function TheUplearnxEdgeSection() {
 
 function EligibilitySection() {
   return (
-    <div id="eligibility" className="relative pt-16 md:pt-24 px-6 md:px-20 pb-16 md:pb-24">
+    <div id="eligibility" className="relative pt-16 md:pt-24 px-6 md:px-20 pb-16 md:pb-24 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
-        <div className="w-full lg:w-1/2">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="w-full lg:w-1/2"
+        >
           <p className="font-sans font-medium text-secondary tracking-wider text-xs uppercase">START HERE</p>
-          <h2 className="uppercase text-4xl md:text-5xl lg:text-[4vw] font-anton leading-none text-primary mt-4">Check Your PMP<sup className='text-[0.6em] align-super'>®</sup> Eligibility</h2>
-          <p className="text-base leading-relaxed mt-6 font-sans text-tertiary">
+          <h2 className="uppercase text-4xl sm:text-5xl lg:text-[4vw] font-anton leading-[1.1] text-primary mt-4 break-words">Check Your PMP<sup className='text-[0.6em] align-super'>®</sup> <br className="md:hidden" />Eligibility</h2>
+          <p className="text-sm sm:text-base leading-relaxed mt-6 font-sans text-tertiary">
             Not sure whether you're ready to begin your PMP<sup className='text-[0.6em] align-super'>®</sup> certification journey? Share your details and let our advisors help you understand the applicable requirements and next steps.
           </p>
           
-          <div className="mt-10 p-6 bg-blue-50 border-l-4 border-secondary rounded-r-xl">
-            <h4 className="font-anton text-xl uppercase text-primary mb-2">READY WHEN YOU ARE</h4>
-            <p className="font-sans text-sm text-tertiary">Don't let application complexity, preparation confusion, or unanswered questions slow you down. Get a structured path, experienced guidance, and dedicated support from start to finish.</p>
-            <div className="flex gap-4 mt-6">
-              <span className="text-xs font-sans font-semibold text-primary uppercase bg-white px-3 py-1 rounded-full shadow-sm">Expert Guidance</span>
-              <span className="text-xs font-sans font-semibold text-primary uppercase bg-white px-3 py-1 rounded-full shadow-sm">Dedicated Support</span>
-              <span className="text-xs font-sans font-semibold text-primary uppercase bg-white px-3 py-1 rounded-full shadow-sm">Pay After Pass</span>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="mt-10 p-6 bg-primary border-l-4 border-secondary rounded-r-xl shadow-xl"
+          >
+            <h4 className="font-anton text-xl uppercase text-white mb-2">READY WHEN YOU ARE</h4>
+            <p className="font-sans text-sm text-white/80">Don't let application complexity, preparation confusion, or unanswered questions slow you down. Get a structured path, experienced guidance, and dedicated support from start to finish.</p>
+            <div className="flex flex-wrap gap-3 mt-6">
+              <span className="text-[10px] sm:text-xs font-sans font-semibold text-primary uppercase bg-white px-3 py-1.5 rounded-full shadow-sm text-center whitespace-nowrap">Expert Guidance</span>
+              <span className="text-[10px] sm:text-xs font-sans font-semibold text-primary uppercase bg-white px-3 py-1.5 rounded-full shadow-sm text-center whitespace-nowrap">Dedicated Support</span>
+              <span className="text-[10px] sm:text-xs font-sans font-semibold text-primary uppercase bg-white px-3 py-1.5 rounded-full shadow-sm text-center whitespace-nowrap">Pay After Pass</span>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         
-        <div className="w-full lg:w-1/2">
-          <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-primary/10">
-            <h3 className="text-2xl font-anton text-primary uppercase mb-6">Let's Check Your Eligibility</h3>
-            <form className="space-y-5">
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="w-full lg:w-1/2"
+        >
+          <div className="bg-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-primary/5 relative overflow-hidden">
+             {/* decorative blob */}
+             <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-bl-full -z-0 pointer-events-none"></div>
+             
+            <h3 className="text-2xl font-anton text-primary uppercase mb-6 relative z-10">Let's Check Your Eligibility</h3>
+            <form className="space-y-4 relative z-10">
               <div>
                 <label className="block text-xs font-sans font-semibold text-primary uppercase tracking-wider mb-2">Full Name</label>
                 <input type="text" placeholder="Enter your full name" className="w-full bg-[#f8fafc] border border-primary/10 rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-sans font-semibold text-primary uppercase tracking-wider mb-2">Email Address</label>
                   <input type="email" placeholder="Enter your email address" className="w-full bg-[#f8fafc] border border-primary/10 rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
@@ -560,11 +581,11 @@ function EligibilitySection() {
                   <input type="tel" placeholder="Enter your WhatsApp number" className="w-full bg-[#f8fafc] border border-primary/10 rounded-lg px-4 py-3 font-sans text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-sans font-semibold text-primary uppercase tracking-wider mb-2">Highest Qualification</label>
-                  <select className="w-full bg-[#f8fafc] border border-primary/10 rounded-lg px-4 py-3 font-sans text-sm text-tertiary focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all appearance-none">
-                    <option value="" disabled selected>Select your qualification</option>
+                  <select defaultValue="" className="w-full bg-[#f8fafc] border border-primary/10 rounded-lg px-4 py-3 font-sans text-sm text-tertiary focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all appearance-none">
+                    <option value="" disabled>Select your qualification</option>
                     <option>Diploma</option>
                     <option>Bachelor's Degree</option>
                     <option>Master's Degree</option>
@@ -573,8 +594,8 @@ function EligibilitySection() {
                 </div>
                 <div>
                   <label className="block text-xs font-sans font-semibold text-primary uppercase tracking-wider mb-2">Years of Experience</label>
-                  <select className="w-full bg-[#f8fafc] border border-primary/10 rounded-lg px-4 py-3 font-sans text-sm text-tertiary focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all appearance-none">
-                    <option value="" disabled selected>Select experience</option>
+                  <select defaultValue="" className="w-full bg-[#f8fafc] border border-primary/10 rounded-lg px-4 py-3 font-sans text-sm text-tertiary focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all appearance-none">
+                    <option value="" disabled>Select experience</option>
                     <option>Less than 1 year</option>
                     <option>1–3 years</option>
                     <option>3–5 years</option>
@@ -589,19 +610,19 @@ function EligibilitySection() {
               </div>
               <div className="flex items-start gap-3 mt-4">
                 <input type="checkbox" id="consent" className="mt-1 w-4 h-4 text-secondary border-primary/20 rounded focus:ring-secondary" />
-                <label htmlFor="consent" className="text-xs text-tertiary font-sans leading-relaxed">
+                <label htmlFor="consent" className="text-[10px] sm:text-xs text-tertiary font-sans leading-relaxed">
                   I agree to be contacted by UPlearnx regarding my PMP<sup className='text-[0.6em] align-super'>®</sup> certification eligibility and support services.
                 </label>
               </div>
-              <button type="button" className="w-full bg-primary hover:bg-secondary text-white font-anton uppercase tracking-wider py-4 rounded-xl shadow-md transition-colors mt-6 text-lg">
+              <button type="button" className="w-full bg-primary hover:bg-secondary text-white font-anton uppercase tracking-wider py-4 rounded-xl shadow-md transition-colors mt-6 text-sm sm:text-lg">
                 Check My Eligibility &rarr;
               </button>
-              <p className="text-[10px] text-center text-tertiary font-sans mt-4 uppercase tracking-widest">
+              <p className="text-[9px] sm:text-[10px] text-center text-tertiary font-sans mt-4 uppercase tracking-widest">
                 Your information is used only to respond to your eligibility request and provide relevant certification guidance.
               </p>
             </form>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
@@ -665,13 +686,7 @@ function Footer() {
   return (
     <div className="relative -mt-8 md:-mt-12 z-20">
       {/* Floating Call to Action Card */}
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.8 }}
-        className="relative z-20 max-w-5xl mx-auto px-6 md:px-12 -mb-24 md:-mb-32 pointer-events-auto"
-      >
+      <div className="relative z-20 max-w-5xl mx-auto px-6 md:px-12 -mb-24 md:-mb-32 pointer-events-auto">
         <div className="bg-[#091128] border border-white/10 p-8 md:p-16 rounded-[40px] text-center flex flex-col items-center shadow-[0_30px_80px_rgba(0,0,0,0.4)] hover:border-white/20 transition-all duration-500 group overflow-hidden relative">
            {/* Glow Effect */}
            <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
@@ -686,14 +701,11 @@ function Footer() {
              Start My PMP<sup className='text-[0.6em] align-super'>®</sup> Journey <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
            </a>
         </div>
-      </motion.div>
+      </div>
 
       <footer className="relative bg-[#050B14] overflow-hidden text-white pt-40 md:pt-48 pb-10 font-sans border-t border-primary/20">
         
-        {/* Interactive Kinetic Dots Shader Background */}
-        <div className="absolute inset-0 z-0 opacity-60 overflow-hidden pointer-events-auto">
-          <WebsiteShaderCanvas preset="kinetic-dots" tone="dark" className="w-full h-full" />
-        </div>
+
 
         {/* Massive Background Text Watermark */}
         <div className="absolute bottom-0 left-0 right-0 flex justify-center pointer-events-none overflow-hidden translate-y-1/4 opacity-[0.03] z-0">
@@ -701,13 +713,7 @@ function Footer() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pointer-events-none">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
             
             {/* Brand Column */}
             <div className="lg:col-span-4">
@@ -787,15 +793,9 @@ function Footer() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-xs text-white/40 font-sans pointer-events-auto"
-          >
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-xs text-white/40 font-sans pointer-events-auto">
             <p className="leading-relaxed">
               PMP<sup className='text-[0.6em] align-super'>®</sup>, PMI<sup className='text-[0.6em] align-super'>®</sup>, and Project Management Professional are marks of Project Management Institute, Inc. UPlearnx is an independent education and certification-support service and is not affiliated with, sponsored by, or endorsed by PMI unless expressly stated otherwise.
             </p>
@@ -805,7 +805,7 @@ function Footer() {
               <Link href="#" className="hover:text-white transition-colors">Refund Policy</Link>
               <Link href="#" className="hover:text-white transition-colors">Disclaimer</Link>
             </div>
-          </motion.div>
+          </div>
           
           <div className="mt-8 pt-6 border-t border-white/5 text-center text-[10px] text-white/30 uppercase tracking-widest font-sans pointer-events-auto">
             © {new Date().getFullYear()} UPlearnx Inc. All rights reserved.
