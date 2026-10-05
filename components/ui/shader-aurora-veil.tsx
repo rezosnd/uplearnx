@@ -37,6 +37,7 @@ export interface WebsiteShaderCanvasProps {
   intensity?: number;
   animate?: boolean;
   maxPixelRatio?: number;
+  jhvjhvhvuykuyf
   maxCanvasPixels?: number;
   children?: ReactNode;
 }
@@ -376,8 +377,8 @@ export function WebsiteShaderCanvas({
           : { x: 0.5, y: 0.5 };
         const liveTrails = isInteractive
           ? trailRef.current.filter(
-              (trail) => nowSeconds - trail.createdAt < 1.1,
-            )
+            (trail) => nowSeconds - trail.createdAt < 1.1,
+          )
           : [];
         trailRef.current = liveTrails;
         trailUniform.fill(0);
@@ -500,7 +501,7 @@ export function WebsiteShaderCanvas({
       if (
         !lastTrail ||
         Math.hypot(nextPointer.x - lastTrail.x, nextPointer.y - lastTrail.y) >
-          0.018 ||
+        0.018 ||
         now - lastTrail.createdAt > 0.045
       ) {
         trailRef.current = [
@@ -523,8 +524,8 @@ export function WebsiteShaderCanvas({
       onPointerLeave={
         isInteractive
           ? () => {
-              pointerRef.current = { x: 0.5, y: 0.5 };
-            }
+            pointerRef.current = { x: 0.5, y: 0.5 };
+          }
           : undefined
       }
     >

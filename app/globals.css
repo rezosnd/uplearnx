@@ -1,9 +1,12 @@
 @import "tailwindcss";
 
-@theme inline {
-  --color-primary: #091128;
-  --color-secondary: #E11D48;
-  --color-tertiary: #475569;
+@theme {
+  --color-primary: #0B1428;
+  --color-secondary: #F2B705;
+  --color-tertiary: #16233B;
+  --color-cream: #FFFDF7;
+  --color-cream-light: #FFF8E6;
+  --color-gold-border: #E9D79A;
   
   --font-anton: var(--font-anton);
   --font-sans: var(--font-inter);
@@ -14,7 +17,7 @@ html {
 }
 
 body {
-  background-color: #F8FAFC;
+  background-color: var(--color-cream);
   color: var(--color-primary);
   font-family: var(--font-inter), sans-serif;
 }
@@ -55,3 +58,17 @@ body {
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
+
+/* Infinite Scroll Testimonial Marquee */
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-left {
+  animation: scrollLeft 40s linear infinite;
+  display: flex;
+  width: max-content;
+}
+.marquee-left:hover {
+  animation-play-state: paused;
+}

@@ -34,7 +34,7 @@ const MarqueeLogoScroller = React.forwardRef<HTMLDivElement, MarqueeLogoScroller
             to { transform: translateX(-50%); }
           }
         `}</style>
-        
+
         <section
           ref={ref}
           aria-label={title || "Trusted By"}
@@ -46,13 +46,13 @@ const MarqueeLogoScroller = React.forwardRef<HTMLDivElement, MarqueeLogoScroller
         >
           {/* Header Section */}
           <div className="px-6 md:px-20 py-12 pb-8 flex flex-col items-center text-center">
-             <p className="font-sans font-medium text-secondary tracking-wider text-xs uppercase opacity-0 animate-fade-in-up">TRUSTED BY PROJECT PROFESSIONALS</p>
-             <h3 className="font-anton text-2xl md:text-3xl text-primary uppercase mt-3 opacity-0 animate-fade-in-up delay-100">
-               {title}
-             </h3>
-             <p className="font-sans text-sm text-tertiary max-w-2xl mt-4 opacity-0 animate-fade-in-up delay-200">
-               {description}
-             </p>
+            <p className="font-sans font-medium text-secondary tracking-wider text-xs uppercase opacity-0 animate-fade-in-up">TRUSTED BY PROJECT PROFESSIONALS</p>
+            <h3 className="font-anton text-2xl md:text-3xl text-primary uppercase mt-3 opacity-0 animate-fade-in-up delay-100">
+              {title}
+            </h3>
+            <p className="font-sans text-sm text-tertiary max-w-2xl mt-4 opacity-0 animate-fade-in-up delay-200">
+              {description}
+            </p>
           </div>
 
           {/* Marquee Section */}
@@ -63,8 +63,8 @@ const MarqueeLogoScroller = React.forwardRef<HTMLDivElement, MarqueeLogoScroller
               WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
             }}
           >
-            <div 
-              className="flex w-max items-center gap-6 py-4 pr-6 hover:[animation-play-state:paused] transition-all duration-300 ease-in-out" 
+            <div
+              className="flex w-max items-center gap-6 py-4 pr-6 hover:[animation-play-state:paused] transition-all duration-300 ease-in-out"
               style={{
                 animation: `marquee ${animationDuration} linear infinite`,
               }}
