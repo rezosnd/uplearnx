@@ -37,7 +37,6 @@ export interface WebsiteShaderCanvasProps {
   intensity?: number;
   animate?: boolean;
   maxPixelRatio?: number;
-  jhvjhvhvuykuyf
   maxCanvasPixels?: number;
   children?: ReactNode;
 }
